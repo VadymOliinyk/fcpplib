@@ -1,8 +1,8 @@
-#include <iostream>
 #include <fcpp.h>
+
 
 int main()
 {
-    spprint();
+    test_msg();
     return 0;
 }

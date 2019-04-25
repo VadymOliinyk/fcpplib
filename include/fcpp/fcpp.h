@@ -1,10 +1,10 @@
-
-
 #include <string>
 #include <iostream>
+#include "testmessanger.h"
 
 void test_msg() {
-    std::cout << "test" << std::endl;
+    TestMessanger msg001;
+    msg001.printmsg();
 
 }
 
