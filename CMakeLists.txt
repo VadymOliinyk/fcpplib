@@ -1,26 +1,19 @@
 cmake_minimum_required(VERSION 3.10.1)
 
-project(fcpplib)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake")
+
+project(fcpplib CXX)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+#set(FCPP_LIBRARIES fcpplib CACHE INTERNAL "")
+#set(FCPP_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "")
 
 
 
-include_directories(
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/fcpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src"
-    )
-
-
-add_library(fcpplib STATIC
-
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/testmessanger.cpp
-
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/testmessanger.h
-
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/fcpp/fcpp.h
-    )
-
-set_target_properties(fcpplib PROPERTIES LINKER_LANGUAGE CXX)
-
-
+add_subdirectory(src)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/demo)
 
