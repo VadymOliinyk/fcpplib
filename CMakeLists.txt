@@ -14,7 +14,7 @@ set(FCPP_LIBRARIES fcpp)
 set(FCPP_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
-
+add_subdirectory(ext/cpr)
 add_subdirectory(src)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/demo)
 

@@ -4,17 +4,17 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 add_library(${PROJECT_NAME} STATIC
     testmessanger.cpp
     markets.cpp
-
-    # Headers for IDE (t.d. remove latter)
-    testmessanger.h
-    markets.h
     )
 
 target_include_directories(${PROJECT_NAME}
-    PRIVATE src
-    PUBLIC ${FCPP_INCLUDE_DIRS})
-
-message(STATUS ${FCPPLIB_PROJECT_DIR})
+    PUBLIC
+    $<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${FCPP_INCLUDE_DIRS}>
+#    ${FCPP_INCLUDE_DIRS})
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CPR_INCLUDE_DIRS}
+    )
 
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
@@ -22,6 +22,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
 
 
 set_target_properties(fcpp PROPERTIES LINKER_LANGUAGE CXX)
+
+target_link_libraries(${PROJECT_NAME} ${CPR_LIBRARIES})
 
 #target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 #target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
