@@ -16,7 +16,7 @@ std::string Request::get()
      CURL* easyhandle = curl_easy_init();
      std::string readBuffer;
 
-     curl_easy_setopt(easyhandle, CURLOPT_URL, "http://31.172.83.181:8080/free/comps/1");
+     curl_easy_setopt(easyhandle, CURLOPT_URL, url.c_str());
      curl_easy_setopt(easyhandle, CURLOPT_VERBOSE, 1L);
      curl_easy_setopt(easyhandle, CURLOPT_WRITEFUNCTION, write_callback);
      curl_easy_setopt(easyhandle, CURLOPT_WRITEDATA, &readBuffer);
