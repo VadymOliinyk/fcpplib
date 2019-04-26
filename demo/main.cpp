@@ -1,12 +1,14 @@
 #include <fcpp/fcpp.h>
 #include <iostream>
-
+#include <cpr/cpr.h>
 #include "fcpp/markets.h"
+#include "fcpp/request.h"
 
 int main()
 {
-    Markets markets;
-    std::cout << markets.get_all() << std::endl;
+    Request request("https://www.google.com/");
+    auto r = request.get();
+
 
 return 0;
 }
