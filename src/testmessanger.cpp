@@ -1,6 +1,9 @@
 #include "testmessanger.h"
 #include <iostream>
 
+
+
+
 TestMessanger::TestMessanger()
 {
     msg_tmp = "msg temp";

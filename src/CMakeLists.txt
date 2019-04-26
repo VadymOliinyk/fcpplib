@@ -3,11 +3,18 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Declare the library
 add_library(${PROJECT_NAME} STATIC
     testmessanger.cpp
+    markets.cpp
+
     # Headers for IDE (t.d. remove latter)
     testmessanger.h
+    markets.h
     )
 
-target_include_directories(${PROJECT_NAME} PUBLIC .)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE src
+    PUBLIC ${FCPP_INCLUDE_DIRS})
+
+message(STATUS ${FCPPLIB_PROJECT_DIR})
 
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
