@@ -1,0 +1,8 @@
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/CMakeFiles/rebuild_cache.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/CMakeFiles/edit_cache.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/src/CMakeFiles/rebuild_cache.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/src/CMakeFiles/fcpplib.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/src/CMakeFiles/edit_cache.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/demo/CMakeFiles/rebuild_cache.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/demo/CMakeFiles/demo.dir
+/home/vadym/Dev/testFOLDER/fcpplib/buikd/demo/CMakeFiles/edit_cache.dir

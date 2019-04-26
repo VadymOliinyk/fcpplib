@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libfcpplib.a  CMakeFiles/fcpplib.dir/testmessanger.cpp.o CMakeFiles/fcpplib.dir/markets.cpp.o
+/usr/bin/ranlib ../lib/libfcpplib.a

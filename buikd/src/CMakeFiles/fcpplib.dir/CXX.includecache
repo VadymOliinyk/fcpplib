@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vadym/Dev/testFOLDER/fcpplib/src/markets.cpp
+markets.h
+/home/vadym/Dev/testFOLDER/fcpplib/src/markets.h
+
+/home/vadym/Dev/testFOLDER/fcpplib/src/markets.h
+iostream
+-
+
+/home/vadym/Dev/testFOLDER/fcpplib/src/testmessanger.cpp
+testmessanger.h
+/home/vadym/Dev/testFOLDER/fcpplib/src/testmessanger.h
+iostream
+-
+
+/home/vadym/Dev/testFOLDER/fcpplib/src/testmessanger.h
+string
+-
+
