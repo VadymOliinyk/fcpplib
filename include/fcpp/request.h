@@ -1,7 +1,6 @@
 #ifndef REQUEST_H
 #define REQUEST_H
 
-//#include <curl/curl.h>
 #include <string>
 #include <iostream>
 
