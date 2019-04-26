@@ -2,7 +2,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Declare the library
 add_library(${PROJECT_NAME} STATIC
-    testmessanger.cpp
     markets.cpp
     )
 
