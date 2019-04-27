@@ -12,7 +12,8 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 set(FCPP_LIBRARIES fcpp)
 set(FCPP_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
+set(JSON_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/ext/json/include)
 
 add_subdirectory(src)
+add_subdirectory(ext/json)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/demo)
