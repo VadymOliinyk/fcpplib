@@ -7,21 +7,19 @@ std::string Request::get(){
     return body;
 }
 
-void Request::encode_to_url(std::string base_url, std::string json_market_filter ){
+void Request::encode_to_url(){
+
     CURL *curl = curl_easy_init();
+
     if(curl) {
-      char *output = curl_easy_escape(curl, json_market_filter.c_str(), json_market_filter.size());
-      if(output) {
+        char *output = curl_easy_escape(curl, json_market_filter.c_str(), json_market_filter.size());
+        if(output) {
 
-        printf("Encoded: %s\n", output);
-        end_point = base_url + output;
-
-
-        curl_free(output);
-      }
+            printf("Encoded: %s\n", output);
+            end_point = base_url + output;
+            curl_free(output);
+        }
     }
-
-
 }
 
 size_t Request::write_callback(char *contents,
@@ -36,10 +34,7 @@ void Request::perform()
 {
 
     std::cout << base_url << std::endl;
-    encode_to_url(base_url, json_market_filter);
-
-
-//-----------------------------------------------------------------------------//
+    encode_to_url();
     curl_global_init(CURL_GLOBAL_ALL);
 
     struct curl_slist *headers=NULL; // init to NULL is important
@@ -50,7 +45,6 @@ void Request::perform()
 
     CURL* easyhandle = curl_easy_init();
 
-//    curl_easy_setopt(easyhandle, CURLOPT_POSTFIELDS, "time");
     curl_easy_setopt(easyhandle, CURLOPT_URL, end_point.c_str());
     curl_easy_setopt(easyhandle, CURLOPT_VERBOSE, 1L);
     curl_easy_setopt(easyhandle, CURLOPT_WRITEFUNCTION, write_callback);

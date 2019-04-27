@@ -12,17 +12,18 @@ public:
         json_market_filter(jf){}
 
     Request() {}
+    /* Returns body of the response */
     std::string get();
-    std::string get_url();
 private:
     std::string base_url;
     std::string json_market_filter;
     std::string end_point;
     std::string body;
     std::string readBuffer;
-    void encode_to_url(std::string base_url, std::string json_market_filter);
+    void encode_to_url();
     void perform();
 
+    /* Callback function for libcurl */
     static size_t write_callback(char *contents,
                                  size_t size,
                                  size_t nmemb,
