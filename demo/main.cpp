@@ -4,8 +4,9 @@
 
 int main()
 {
-    Request request("https://www.google.com/");
-    auto r = request.get();
+    Request request("https://jsonplaceholder.typicode.com/posts/1");
+
+    std::cout << request.get() << std::endl;
 
 return 0;
 }
