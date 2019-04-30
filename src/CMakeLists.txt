@@ -5,7 +5,9 @@ set(CURL_LIBRARY "-lcurl")
 
 # Declare the library
 add_library(${PROJECT_NAME} STATIC
-    request.cpp)
+    request.cpp
+    market.cpp
+    parser.cpp)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC

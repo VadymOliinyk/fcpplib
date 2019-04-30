@@ -3,29 +3,38 @@
 #include "fcpp/request.h"
 #include "nlohmann/json.hpp"
 #include <iomanip>
+#include <fstream>
+#include <string>
+#include <vector>
+#include "fcpp/market.h"
+#include "fcpp/parser.h"
+
+using namespace std;
+using namespace nlohmann;
+
 int main()
 {
+    string line;
+    ifstream tempo_json;
+    tempo_json.open("tempo.json");
+    json j;
+    tempo_json >> j;
 
-    nlohmann::json j;
-//    j["Cat"] = 12;
-    j["SoftChangedAfter"] = "2019-04-27T08:23:30";
-    j["OnlyActive"] = true;
-    j["FromID"] = 0;
-    j["ToID"] = 5;
-    j["MaxMargin"] = 101.0;
+    auto market_obs = get_market_objects(j);
 
-   std::string json_market_filter = j.dump();
+    cout << market_obs.size() << endl;
+    cout << "CatID : " << market_obs[0].CatID << endl;
+    cout << "ClosD : " << market_obs[0].ClosD  << endl;
+    cout << "com_recip" << endl;
+    cout << "    cr_777555 : " << market_obs[0].com_recip.cr_777555   << endl ;
+    cout << "ID : " << market_obs[0].ID << endl;
+    cout << "ID : " << market_obs[1].ID << endl;
+    cout << "ID : " << market_obs[2].ID << endl;
 
 
-    Request request("http://31.172.83.181:8080/free/markets/",
-                    json_market_filter
-                    );
 
-//    nlohmann::json j_output;
-    auto j_output = nlohmann::json::parse( request.get().c_str());
-    std::cout << j_output.dump(4) << std::endl;
-    std::cout << std::endl;
-//    std::cout << request.get() << std::endl;
+    cout  << endl << endl;
 
-return 0;
+
+    return 0;
 }

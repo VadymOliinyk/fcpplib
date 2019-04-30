@@ -12,7 +12,8 @@ void Request::encode_to_url(){
     CURL *curl = curl_easy_init();
 
     if(curl) {
-        char *output = curl_easy_escape(curl, json_market_filter.c_str(), json_market_filter.size());
+        char *output = curl_easy_escape(curl, json_market_filter.c_str(),
+                                        json_market_filter.size());
         if(output) {
 
             printf("Encoded: %s\n", output);
