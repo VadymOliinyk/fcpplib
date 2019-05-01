@@ -1,6 +1,5 @@
 #include "fcpp/request.h"
 #include "curl/curl.h"
-#include "nlohmann/json.hpp"
 
 std::string Request::get(){
     perform();
@@ -15,7 +14,6 @@ void Request::encode_to_url(){
         char *output = curl_easy_escape(curl, json_market_filter.c_str(),
                                         json_market_filter.size());
         if(output) {
-
             printf("Encoded: %s\n", output);
             end_point = base_url + output;
             curl_free(output);
@@ -33,19 +31,14 @@ size_t Request::write_callback(char *contents,
 
 void Request::perform()
 {
-
     std::cout << base_url << std::endl;
     encode_to_url();
     curl_global_init(CURL_GLOBAL_ALL);
-
     struct curl_slist *headers=NULL; // init to NULL is important
-
     headers = curl_slist_append(headers, "Accept: application/json");
     headers = curl_slist_append(headers, "Content-Type: application/json");
     headers = curl_slist_append(headers, "charsets: utf-8");
-
     CURL* easyhandle = curl_easy_init();
-
     curl_easy_setopt(easyhandle, CURLOPT_URL, end_point.c_str());
     curl_easy_setopt(easyhandle, CURLOPT_VERBOSE, 1L);
     curl_easy_setopt(easyhandle, CURLOPT_WRITEFUNCTION, write_callback);
@@ -55,7 +48,6 @@ void Request::perform()
     /* store only body of the response */
     curl_easy_setopt(easyhandle, CURLOPT_WRITEDATA, &body);
     curl_easy_perform(easyhandle);
-
     /* cleanup curl stuff */
     curl_easy_cleanup(easyhandle);
 }
