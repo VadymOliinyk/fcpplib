@@ -12,7 +12,7 @@ add_library(${PROJECT_NAME} STATIC
 target_include_directories(${PROJECT_NAME}
     PUBLIC
     $<INSTALL_INTERFACE:include>
-    $<BUILD_INTERFACE:${FCPP_INCLUDE_DIRS}>
+    $<BUILD_INTERFACE:${FAIRLAY_INCLUDE_DIRS}>
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CURL_INCLUDE_DIRS}
@@ -20,8 +20,8 @@ target_include_directories(${PROJECT_NAME}
     )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
-    "${PROJECT_SOURCE_DIR}/include/fcpp/fcpp.h")
+  "${PROJECT_SOURCE_DIR}/include/fairlay/fairlay.h")
 
-set_target_properties(fcpp PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(fairlay PROPERTIES LINKER_LANGUAGE CXX)
 
 target_link_libraries(${PROJECT_NAME} ${CURL_LIBRARIES} nlohmann_json::nlohmann_json)

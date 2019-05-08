@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+namespace fairlay {
+
 class Request
 {
 public:
@@ -29,5 +31,7 @@ private:
                                  size_t nmemb,
                                  void *userp);
 };
+
+} // namespace fairlay
 
 #endif // REQUEST_H

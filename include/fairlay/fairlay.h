@@ -4,5 +4,13 @@
 
 
 
+namespace fairlay {
+
+
+
+}
+
+
+
 
 #endif // FCPP_H

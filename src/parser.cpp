@@ -1,6 +1,7 @@
-#include "fcpp/parser.h"
+#include "fairlay/parser.h"
 
 
+namespace fairlay {
 vector <Market> get_market_objects(json json_obj) {
 
     vector<Market> markets;
@@ -15,3 +16,5 @@ vector <Market> get_market_objects(json json_obj) {
     }
     return markets;
 }
+
+} // namespace fairlay

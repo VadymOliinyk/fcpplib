@@ -1,6 +1,8 @@
-#include "fcpp/request.h"
+#include "fairlay/request.h"
 #include "curl/curl.h"
 
+
+namespace fairlay {
 std::string Request::get(){
     perform();
     return body;
@@ -51,3 +53,5 @@ void Request::perform()
     /* cleanup curl stuff */
     curl_easy_cleanup(easyhandle);
 }
+
+} // namespace fairlay
